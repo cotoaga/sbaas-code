@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost of Delay Calculator - Cotoaga.Net</title>
+    <meta name="description" content="Calculate the financial impact of project delays with our professional Cost of Delay calculator. Make informed business decisions with transparent methodology.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <h1>Cost of Delay Calculator</h1>
+            <p>Make informed decisions about project timing with transparent financial analysis</p>
+        </header>
+
+        <section class="calculator-section">
+            <div class="input-group">
+                <label for="revenue">
+                    Expected Monthly Revenue Impact
+                    <span class="current-value" id="revenue-display">€100,000</span>
+                </label>
+                <div class="slider-container">
+                    <input 
+                        type="range" 
+                        id="revenue" 
+                        class="slider" 
+                        min="0" 
+                        max="4" 
+                        value="0" 
+                        step="1"
+                        aria-describedby="revenue-help"
+                    >
+                    <div class="slider-labels">
+                        <span>€100K</span>
+                        <span>€500K</span>
+                        <span>€1.0M</span>
+                        <span>€5.0M</span>
+                        <span>€10M</span>
+                    </div>
+                </div>
+                <div id="revenue-help" class="sr-only">Select expected monthly revenue impact from project</div>
+            </div>
+
+            <div class="input-group">
+                <label for="margin">
+                    Net Profit Margin
+                    <span class="current-value" id="margin-display">5%</span>
+                </label>
+                <div class="slider-container">
+                    <input 
+                        type="range" 
+                        id="margin" 
+                        class="slider" 
+                        min="0" 
+                        max="4" 
+                        value="2" 
+                        step="1"
+                        aria-describedby="margin-help"
+                    >
+                    <div class="slider-labels">
+                        <span>1%</span>
+                        <span>2%</span>
+                        <span>5%</span>
+                        <span>10%</span>
+                        <span>25%</span>
+                    </div>
+                </div>
+                <div id="margin-help" class="sr-only">Select your business's net profit margin percentage</div>
+            </div>
+
+            <div class="input-group">
+                <label for="growth">
+                    Expected Monthly Growth Rate
+                    <span class="current-value" id="growth-display">10%</span>
+                </label>
+                <div class="slider-container">
+                    <input 
+                        type="range" 
+                        id="growth" 
+                        class="slider" 
+                        min="0" 
+                        max="5" 
+                        value="2" 
+                        step="1"
+                        aria-describedby="growth-help"
+                    >
+                    <div class="slider-labels">
+                        <span>2%</span>
+                        <span>5%</span>
+                        <span>10%</span>
+                        <span>15%</span>
+                        <span>25%</span>
+                        <span>50%</span>
+                    </div>
+                </div>
+                <div id="growth-help" class="sr-only">Select expected monthly growth rate for the revenue impact</div>
+            </div>
+
+            <div class="input-group">
+                <label for="delay">
+                    Delay Period
+                    <span class="current-value" id="delay-display">6 months</span>
+                </label>
+                <div class="slider-container">
+                    <input 
+                        type="range" 
+                        id="delay" 
+                        class="slider" 
+                        min="0" 
+                        max="4" 
+                        value="2" 
+                        step="1"
+                        aria-describedby="delay-help"
+                    >
+                    <div class="slider-labels">
+                        <span>1m</span>
+                        <span>3m</span>
+                        <span>6m</span>
+                        <span>1y</span>
+                        <span>2y</span>
+                    </div>
+                </div>
+                <div id="delay-help" class="sr-only">Select the length of the delay period</div>
+            </div>
+        </section>
+
+        <section class="results-section" role="region" aria-labelledby="results-heading">
+            <h3 id="results-heading">Financial Impact Analysis</h3>
+            
+            <div class="result-item">
+                <span class="result-label">Monthly Profit Impact:</span>
+                <span class="result-value" id="monthly-profit">€5,000</span>
+            </div>
+            
+            <div class="result-item">
+                <span class="result-label">Direct Revenue Loss:</span>
+                <span class="result-value" id="direct-loss">€600,000</span>
+            </div>
+            
+            <div class="result-item">
+                <span class="result-label">Opportunity Cost (Growth):</span>
+                <span class="result-value" id="opportunity-cost">€89,442</span>
+            </div>
+            
+            <div class="result-item">
+                <span class="result-label">Total Cost of Delay:</span>
+                <span class="result-value total" id="total-cost">€689,442</span>
+            </div>
+        </section>
+
+        <section class="methodology-section" role="region" aria-labelledby="methodology-heading">
+            <h3 id="methodology-heading">Calculation Methodology</h3>
+            <p>Our Cost of Delay calculation uses a transparent, conservative approach based on established financial principles:</p>
+            
+            <div class="formula">
+                Monthly Profit = Revenue Impact × Profit Margin
+            </div>
+            
+            <div class="formula">
+                Direct Loss = Monthly Profit × Delay Period
+            </div>
+            
+            <div class="formula">
+                Opportunity Cost = Σ(Monthly Profit × (1 + Growth Rate)^month) for each month
+            </div>
+            
+            <p>This methodology accounts for both immediate revenue loss and the compounding effect of delayed market entry or feature deployment. The calculation assumes linear growth and constant market conditions, providing a conservative baseline estimate.</p>
+            
+            <p><strong>Important:</strong> This tool provides estimates for planning purposes. Actual business impact may vary based on market conditions, competition, and implementation factors not captured in this model.</p>
+        </section>
+
+        <section class="cta-section">
+            <h3>Ready to Act on Your Analysis?</h3>
+            <p>Understanding the cost of delay is the first step toward making informed, timely business decisions. Consider the financial implications as you evaluate your project priorities and resource allocation.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
