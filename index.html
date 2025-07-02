@@ -14,6 +14,44 @@
             <p>Make informed decisions about project timing with transparent financial analysis</p>
         </header>
 
+        <!-- Progress Tracker -->
+        <section class="analysis-progress" role="region" aria-labelledby="progress-heading">
+            <div class="sr-only" id="progress-heading">Analysis Progress</div>
+            <div class="progress-step active" id="step-inputs">
+                <div class="progress-icon">📝</div>
+                <div class="progress-label">Input Data</div>
+            </div>
+            <div class="progress-step" id="step-analysis">
+                <div class="progress-icon">🧮</div>
+                <div class="progress-label">Analysis</div>
+            </div>
+            <div class="progress-step" id="step-insights">
+                <div class="progress-icon">💡</div>
+                <div class="progress-label">Insights</div>
+            </div>
+            <div class="progress-step" id="step-action">
+                <div class="progress-icon">🎯</div>
+                <div class="progress-label">Action Plan</div>
+            </div>
+        </section>
+
+        <!-- Confidence Meter -->
+        <section class="confidence-meter" role="region" aria-labelledby="confidence-heading">
+            <div class="meter-header">
+                <span class="meter-label" id="confidence-heading">Analysis Confidence</span>
+                <span class="meter-value" id="confidenceValue">60%</span>
+            </div>
+            <div class="meter-bar">
+                <div class="meter-fill" id="confidenceFill" style="width: 60%"></div>
+            </div>
+            <div class="meter-factors">
+                <span class="factor pending" id="factor-revenue">○ Revenue scenario explored</span>
+                <span class="factor pending" id="factor-growth">○ Growth assumptions validated</span>  
+                <span class="factor pending" id="factor-comparison">○ Multiple scenarios compared</span>
+                <span class="factor pending" id="factor-insights">○ Business insights reviewed</span>
+            </div>
+        </section>
+
         <section class="calculator-section">
             <div class="input-group">
                 <label for="revenue">
@@ -170,11 +208,56 @@
             <p><strong>Important:</strong> This tool provides estimates for planning purposes. Actual business impact may vary based on market conditions, competition, and implementation factors not captured in this model.</p>
         </section>
 
+        <!-- Scenario Comparison (Hidden initially) -->
+        <section id="comparisonMode" class="comparison-panel hidden" role="region" aria-labelledby="comparison-heading">
+            <h3 id="comparison-heading">📊 Scenario Comparison</h3>
+            <div class="scenario-cards">
+                <div class="scenario-card" id="conservative-scenario">
+                    <h4>Conservative Estimate</h4>
+                    <div class="scenario-values" id="conservative-value">€185,781</div>
+                </div>
+                <div class="scenario-card active" id="current-scenario">
+                    <h4>Current Analysis</h4>
+                    <div class="scenario-values" id="current-value">€385,781</div>
+                </div>
+                <div class="scenario-card" id="aggressive-scenario">
+                    <h4>Aggressive Growth</h4>
+                    <div class="scenario-values" id="aggressive-value">€847,293</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Export Options (Hidden initially) -->
+        <section id="advancedExport" class="export-options hidden" role="region" aria-labelledby="export-heading">
+            <h4 id="export-heading">📋 Executive Summary Options</h4>
+            <button class="export-btn" id="board-presentation-btn">
+                <span class="icon">📊</span>
+                Generate Board Presentation
+            </button>
+            <button class="export-btn" id="roi-analysis-btn">
+                <span class="icon">📈</span>
+                Create ROI Analysis
+            </button>
+            <button class="export-btn" id="executive-summary-btn">
+                <span class="icon">⚡</span>
+                Quick Executive Summary
+            </button>
+        </section>
+
         <section class="cta-section">
             <h3>Ready to Act on Your Analysis?</h3>
             <p>Understanding the cost of delay is the first step toward making informed, timely business decisions. Consider the financial implications as you evaluate your project priorities and resource allocation.</p>
         </section>
     </main>
+
+    <!-- Achievement Notification -->
+    <div id="achievementNotification" class="achievement-notification">
+        <div class="achievement-header">
+            <span class="achievement-icon" id="achievementIcon">🎯</span>
+            <span class="achievement-title" id="achievementTitle">Achievement Unlocked!</span>
+        </div>
+        <div class="achievement-description" id="achievementDescription">You've completed your first analysis</div>
+    </div>
 
     <script src="script.js"></script>
 </body>
