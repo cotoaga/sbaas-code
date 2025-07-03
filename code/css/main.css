@@ -83,12 +83,20 @@ body::after,
   border-left: none !important;
   border-top: none !important;
   content: none !important;
+  display: none !important;
 }
 
 /* Specific blue line elimination */
 .calculator-container {
   border-left: none !important;
   border-top: none !important;
+}
+
+/* Remove any decorative border classes */
+.border-accent,
+.decorative-line,
+.accent-line {
+  display: none !important;
 }
 
 /* Container & Layout */
@@ -129,6 +137,16 @@ body::after,
 
 /* Override any white text on light backgrounds */
 .results-section h3 {
+  color: var(--grey-dark) !important;
+}
+
+/* Force dark text on all headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--grey-dark) !important;
+}
+
+/* Specific problem areas */
+.calculator-subtitle {
   color: var(--grey-dark) !important;
 }
 
