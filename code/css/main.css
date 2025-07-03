@@ -82,6 +82,13 @@ body::after,
   border: none !important;
   border-left: none !important;
   border-top: none !important;
+  content: none !important;
+}
+
+/* Specific blue line elimination */
+.calculator-container {
+  border-left: none !important;
+  border-top: none !important;
 }
 
 /* Container & Layout */
@@ -110,6 +117,19 @@ body::after,
   opacity: 0.8;
   max-width: 600px;
   margin: 0 auto;
+}
+
+/* Ensure readable text contrast on all headings */
+.results-header h2,
+.cost-analysis-title,
+.section-title,
+.achievement-header h3 {
+  color: var(--grey-dark) !important; /* #333333 */
+}
+
+/* Override any white text on light backgrounds */
+.results-section h3 {
+  color: var(--grey-dark) !important;
 }
 
 /* Form Styling */

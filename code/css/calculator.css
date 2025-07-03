@@ -139,12 +139,14 @@
   box-shadow: var(--shadow-medium);
 }
 
-/* Slider Container Variants - Clean without decorative borders */
+/* Slider Container Variants - Force white backgrounds */
 .slider-container.revenue,
 .slider-container.margin,
 .slider-container.growth,
 .slider-container.delay {
-  /* Removed decorative border-left elements */
+  background: #FFFFFF !important;
+  border-left: none !important;
+  border-top: none !important;
 }
 
 /* Interactive States */
