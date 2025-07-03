@@ -100,7 +100,10 @@ body::after,
 }
 
 /* Container & Layout */
-.calculator-container {
+.calculator-container,
+.main-container,
+.content-wrapper,
+.section-wrapper {
   max-width: 800px;
   margin: var(--space-lg) auto;
   padding: var(--space-xl);
@@ -109,6 +112,13 @@ body::after,
   border: 1px solid #e2e8f0;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   font-family: var(--font-family);
+}
+
+/* Override any dark theme remnants */
+.dark-bg,
+.grey-bg,
+.section-dark {
+  background: #FFFFFF !important;
 }
 
 .calculator-header {
@@ -241,12 +251,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Achievement Panel */
-.achievement-panel {
-  background: var(--white);
+.achievement-panel,
+.achievement-section,
+.achievements-container {
+  background: #FFFFFF !important;
   border: 2px solid var(--blue-light);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   margin-bottom: var(--space-xl);
+}
+
+/* Achievement grid container */
+.achievement-grid {
+  background: transparent;
 }
 
 .achievement-header {

@@ -1,7 +1,11 @@
 /* Calculator-specific styles */
 
 /* Slider Container - Force white background */
-.slider-container {
+.slider-container,
+.input-group,
+.input-card,
+.form-section,
+.calculator-form .slider-container {
   background: #FFFFFF !important;
   border: 1px solid #e2e8f0 !important;
   border-radius: 12px;
@@ -146,13 +150,18 @@
 .slider-container.delay {
   background: #FFFFFF !important;
   border: 1px solid #e2e8f0 !important;
-  border-left: 1px solid #e2e8f0 !important;
-  border-top: 1px solid #e2e8f0 !important;
 }
 
-/* Input groups also white */
-.input-group,
-.input-card {
+/* Calculator form containers */
+.calculator-form,
+.slider-grid {
+  background: transparent;
+}
+
+/* Ensure all form elements have white backgrounds */
+.calculator-container .slider-container,
+.calculator-container .input-group,
+.calculator-container .input-card {
   background: #FFFFFF !important;
   border: 1px solid #e2e8f0 !important;
 }
