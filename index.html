@@ -3,262 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cost of Delay Calculator - Cotoaga.Net</title>
-    <meta name="description" content="Calculate the financial impact of project delays with our professional Cost of Delay calculator. Make informed business decisions with transparent methodology.">
-    <link rel="stylesheet" href="styles.css">
+    <title>Cost of Delay Estimator</title>
+    <meta name="description" content="Calculate the financial impact of project delays. Interactive business tool for strategic decision making.">
+    <meta name="keywords" content="cost of delay, project management, business analysis, strategic planning">
+    <meta name="author" content="Cotoaga.Net">
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Stylesheets -->
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/calculator.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 <body>
-    <main class="container">
-        <header class="header">
-            <h1>Cost of Delay Calculator</h1>
-            <p>Make informed decisions about project timing with transparent financial analysis</p>
-        </header>
-
-        <!-- Progress Tracker -->
-        <section class="analysis-progress" role="region" aria-labelledby="progress-heading">
-            <div class="sr-only" id="progress-heading">Analysis Progress</div>
-            <div class="progress-step active" id="step-inputs">
-                <div class="progress-icon">📝</div>
-                <div class="progress-label">Input Data</div>
-            </div>
-            <div class="progress-step" id="step-analysis">
-                <div class="progress-icon">🧮</div>
-                <div class="progress-label">Analysis</div>
-            </div>
-            <div class="progress-step" id="step-insights">
-                <div class="progress-icon">💡</div>
-                <div class="progress-label">Insights</div>
-            </div>
-            <div class="progress-step" id="step-action">
-                <div class="progress-icon">🎯</div>
-                <div class="progress-label">Action Plan</div>
-            </div>
-        </section>
-
-        <!-- Confidence Meter -->
-        <section class="confidence-meter" role="region" aria-labelledby="confidence-heading">
-            <div class="meter-header">
-                <span class="meter-label" id="confidence-heading">Analysis Confidence</span>
-                <span class="meter-value" id="confidenceValue">60%</span>
-            </div>
-            <div class="meter-bar">
-                <div class="meter-fill" id="confidenceFill" style="width: 60%"></div>
-            </div>
-            <div class="meter-factors">
-                <span class="factor pending" id="factor-revenue">○ Revenue scenario explored</span>
-                <span class="factor pending" id="factor-growth">○ Growth assumptions validated</span>  
-                <span class="factor pending" id="factor-comparison">○ Multiple scenarios compared</span>
-                <span class="factor pending" id="factor-insights">○ Business insights reviewed</span>
-            </div>
-        </section>
-
-        <section class="calculator-section">
-            <div class="input-group">
-                <label for="revenue">
-                    Expected Monthly Revenue Impact
-                    <span class="current-value" id="revenue-display">€100,000</span>
-                </label>
-                <div class="slider-container">
-                    <input 
-                        type="range" 
-                        id="revenue" 
-                        class="slider" 
-                        min="0" 
-                        max="4" 
-                        value="0" 
-                        step="1"
-                        aria-describedby="revenue-help"
-                    >
-                    <div class="slider-labels">
-                        <span>€100K</span>
-                        <span>€500K</span>
-                        <span>€1.0M</span>
-                        <span>€5.0M</span>
-                        <span>€10M</span>
-                    </div>
-                </div>
-                <div id="revenue-help" class="sr-only">Select expected monthly revenue impact from project</div>
-            </div>
-
-            <div class="input-group">
-                <label for="margin">
-                    Net Profit Margin
-                    <span class="current-value" id="margin-display">5%</span>
-                </label>
-                <div class="slider-container">
-                    <input 
-                        type="range" 
-                        id="margin" 
-                        class="slider" 
-                        min="0" 
-                        max="4" 
-                        value="2" 
-                        step="1"
-                        aria-describedby="margin-help"
-                    >
-                    <div class="slider-labels">
-                        <span>1%</span>
-                        <span>2%</span>
-                        <span>5%</span>
-                        <span>10%</span>
-                        <span>25%</span>
-                    </div>
-                </div>
-                <div id="margin-help" class="sr-only">Select your business's net profit margin percentage</div>
-            </div>
-
-            <div class="input-group">
-                <label for="growth">
-                    Expected Monthly Growth Rate
-                    <span class="current-value" id="growth-display">10%</span>
-                </label>
-                <div class="slider-container">
-                    <input 
-                        type="range" 
-                        id="growth" 
-                        class="slider" 
-                        min="0" 
-                        max="5" 
-                        value="2" 
-                        step="1"
-                        aria-describedby="growth-help"
-                    >
-                    <div class="slider-labels">
-                        <span>2%</span>
-                        <span>5%</span>
-                        <span>10%</span>
-                        <span>15%</span>
-                        <span>25%</span>
-                        <span>50%</span>
-                    </div>
-                </div>
-                <div id="growth-help" class="sr-only">Select expected monthly growth rate for the revenue impact</div>
-            </div>
-
-            <div class="input-group">
-                <label for="delay">
-                    Delay Period
-                    <span class="current-value" id="delay-display">6 months</span>
-                </label>
-                <div class="slider-container">
-                    <input 
-                        type="range" 
-                        id="delay" 
-                        class="slider" 
-                        min="0" 
-                        max="4" 
-                        value="2" 
-                        step="1"
-                        aria-describedby="delay-help"
-                    >
-                    <div class="slider-labels">
-                        <span>1m</span>
-                        <span>3m</span>
-                        <span>6m</span>
-                        <span>1y</span>
-                        <span>2y</span>
-                    </div>
-                </div>
-                <div id="delay-help" class="sr-only">Select the length of the delay period</div>
-            </div>
-        </section>
-
-        <section class="results-section" role="region" aria-labelledby="results-heading">
-            <h3 id="results-heading">Financial Impact Analysis</h3>
-            
-            <div class="result-item">
-                <span class="result-label">Monthly Profit Impact:</span>
-                <span class="result-value" id="monthly-profit">€5,000</span>
-            </div>
-            
-            <div class="result-item">
-                <span class="result-label">Direct Revenue Loss:</span>
-                <span class="result-value" id="direct-loss">€600,000</span>
-            </div>
-            
-            <div class="result-item">
-                <span class="result-label">Opportunity Cost (Growth):</span>
-                <span class="result-value" id="opportunity-cost">€89,442</span>
-            </div>
-            
-            <div class="result-item">
-                <span class="result-label">Total Cost of Delay:</span>
-                <span class="result-value total" id="total-cost">€689,442</span>
-            </div>
-        </section>
-
-        <section class="methodology-section" role="region" aria-labelledby="methodology-heading">
-            <h3 id="methodology-heading">Calculation Methodology</h3>
-            <p>Our Cost of Delay calculation uses a transparent, conservative approach based on established financial principles:</p>
-            
-            <div class="formula">
-                Monthly Profit = Revenue Impact × Profit Margin
-            </div>
-            
-            <div class="formula">
-                Direct Loss = Monthly Profit × Delay Period
-            </div>
-            
-            <div class="formula">
-                Opportunity Cost = Σ(Monthly Profit × (1 + Growth Rate)^month) for each month
-            </div>
-            
-            <p>This methodology accounts for both immediate revenue loss and the compounding effect of delayed market entry or feature deployment. The calculation assumes linear growth and constant market conditions, providing a conservative baseline estimate.</p>
-            
-            <p><strong>Important:</strong> This tool provides estimates for planning purposes. Actual business impact may vary based on market conditions, competition, and implementation factors not captured in this model.</p>
-        </section>
-
-        <!-- Scenario Comparison (Hidden initially) -->
-        <section id="comparisonMode" class="comparison-panel hidden" role="region" aria-labelledby="comparison-heading">
-            <h3 id="comparison-heading">📊 Scenario Comparison</h3>
-            <div class="scenario-cards">
-                <div class="scenario-card" id="conservative-scenario">
-                    <h4>Conservative Estimate</h4>
-                    <div class="scenario-values" id="conservative-value">€185,781</div>
-                </div>
-                <div class="scenario-card active" id="current-scenario">
-                    <h4>Current Analysis</h4>
-                    <div class="scenario-values" id="current-value">€385,781</div>
-                </div>
-                <div class="scenario-card" id="aggressive-scenario">
-                    <h4>Aggressive Growth</h4>
-                    <div class="scenario-values" id="aggressive-value">€847,293</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Advanced Export Options (Hidden initially) -->
-        <section id="advancedExport" class="export-options hidden" role="region" aria-labelledby="export-heading">
-            <h4 id="export-heading">📋 Executive Summary Options</h4>
-            <button class="export-btn" id="board-presentation-btn">
-                <span class="icon">📊</span>
-                Generate Board Presentation
-            </button>
-            <button class="export-btn" id="roi-analysis-btn">
-                <span class="icon">📈</span>
-                Create ROI Analysis
-            </button>
-            <button class="export-btn" id="executive-summary-btn">
-                <span class="icon">⚡</span>
-                Quick Executive Summary
-            </button>
-        </section>
-
-        <section class="cta-section">
-            <h3>Ready to Act on Your Analysis?</h3>
-            <p>Understanding the cost of delay is the first step toward making informed, timely business decisions. Consider the financial implications as you evaluate your project priorities and resource allocation.</p>
-        </section>
-    </main>
-
-    <!-- Achievement Notification -->
-    <div id="achievementNotification" class="achievement-notification">
-        <div class="achievement-header">
-            <span class="achievement-icon" id="achievementIcon">🎯</span>
-            <span class="achievement-title" id="achievementTitle">Achievement Unlocked!</span>
+    <div class="calculator-container">
+        <div class="calculator-header">
+            <p class="calculator-subtitle">
+                Make informed decisions about project timing with transparent financial analysis
+            </p>
         </div>
-        <div class="achievement-description" id="achievementDescription">You've completed your first analysis</div>
+        
+        <div class="calculator-form">
+            <div class="slider-grid">
+                <div class="slider-container">
+                    <label for="revenue-slider">Monthly Revenue</label>
+                    <div class="slider-wrapper">
+                        <input type="range" id="revenue-slider" class="slider" min="0" max="4" step="1" value="2">
+                        <div class="slider-labels">
+                            <span>€0.1M</span>
+                            <span>€0.5M</span>
+                            <span>€1.0M</span>
+                            <span>€5.0M</span>
+                            <span>€10M</span>
+                        </div>
+                    </div>
+                    <div class="slider-value" id="revenue-value">€1.0M</div>
+                </div>
+                
+                <div class="slider-container">
+                    <label for="margin-slider">Profit Margin</label>
+                    <div class="slider-wrapper">
+                        <input type="range" id="margin-slider" class="slider" min="0" max="4" step="1" value="2">
+                        <div class="slider-labels">
+                            <span>1%</span>
+                            <span>2%</span>
+                            <span>5%</span>
+                            <span>10%</span>
+                            <span>25%</span>
+                        </div>
+                    </div>
+                    <div class="slider-value" id="margin-value">5%</div>
+                </div>
+                
+                <div class="slider-container">
+                    <label for="growth-slider">Growth Rate</label>
+                    <div class="slider-wrapper">
+                        <input type="range" id="growth-slider" class="slider" min="0" max="5" step="1" value="2">
+                        <div class="slider-labels">
+                            <span>2%</span>
+                            <span>5%</span>
+                            <span>10%</span>
+                            <span>15%</span>
+                            <span>25%</span>
+                            <span>50%</span>
+                        </div>
+                    </div>
+                    <div class="slider-value" id="growth-value">10%</div>
+                </div>
+                
+                <div class="slider-container">
+                    <label for="delay-slider">Project Delay</label>
+                    <div class="slider-wrapper">
+                        <input type="range" id="delay-slider" class="slider" min="0" max="4" step="1" value="2">
+                        <div class="slider-labels">
+                            <span>1m</span>
+                            <span>3m</span>
+                            <span>6m</span>
+                            <span>1y</span>
+                            <span>2y</span>
+                        </div>
+                    </div>
+                    <div class="slider-value" id="delay-value">6m</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="results-panel">
+            <div class="results-header">
+                <h2>Cost of Delay Analysis</h2>
+                <div class="results-subtitle">Financial impact of your project delay</div>
+            </div>
+            
+            <div class="results-grid">
+                <div class="result-card primary">
+                    <div class="result-label">Total Cost of Delay</div>
+                    <div class="result-value" id="total-cost">€0</div>
+                    <div class="result-description">Complete financial impact</div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-label">Monthly Impact</div>
+                    <div class="result-value" id="monthly-impact">€0</div>
+                    <div class="result-description">Lost profit per month</div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-label">Direct Revenue Loss</div>
+                    <div class="result-value" id="direct-loss">€0</div>
+                    <div class="result-description">Linear revenue impact</div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-label">Compound Cost</div>
+                    <div class="result-value" id="compound-cost">€0</div>
+                    <div class="result-description">Growth opportunity cost</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="achievement-panel">
+            <div class="achievement-header">
+                <h3>Strategic Insights</h3>
+                <div class="achievement-progress">
+                    <span id="achievement-count">0</span> achievements unlocked
+                </div>
+            </div>
+            <div class="achievement-grid" id="achievement-grid">
+                <!-- Achievements will be populated by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="educational-panel">
+            <div class="educational-content">
+                <h3>Understanding Cost of Delay</h3>
+                <p>Cost of Delay quantifies the economic impact of postponing a project or feature. It combines direct revenue loss with compound opportunity costs, helping you make informed prioritization decisions.</p>
+                
+                <div class="formula-explanation">
+                    <h4>Calculation Method</h4>
+                    <ul>
+                        <li><strong>Direct Loss:</strong> Revenue impact × Delay period</li>
+                        <li><strong>Compound Cost:</strong> Growth opportunity lost over time</li>
+                        <li><strong>Total Impact:</strong> Direct + Compound costs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <script src="script.js"></script>
+    
+    <!-- Achievement Notification Template -->
+    <div id="achievement-notification-template" class="achievement-notification hidden">
+        <div class="achievement-content">
+            <div class="achievement-icon"></div>
+            <div class="achievement-text">
+                <div class="achievement-title"></div>
+                <div class="achievement-description"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="js/calculator.js"></script>
+    <script src="js/gamification.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/analytics.js"></script>
+    
+    <script>
+        // Initialize calculator when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const calculator = new CostCalculator();
+            const analytics = new CalculatorAnalytics();
+            
+            // Track initial page load
+            analytics.trackInteraction('page_load');
+        });
+    </script>
 </body>
 </html>
