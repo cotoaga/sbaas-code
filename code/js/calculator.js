@@ -34,6 +34,7 @@ class CostCalculator {
         // Margin slider
         this.setupSlider('margin', MARGIN_VALUES, MARGIN_LABELS, 2, (value, index) => {
             this.achievementSystem.trackAction('margin_changes');
+            this.achievementSystem.trackAction('max_margin_tested', value);
             this.analytics.trackInteraction('margin_change', value);
             this.updateCalculation();
         });
@@ -41,6 +42,7 @@ class CostCalculator {
         // Growth slider
         this.setupSlider('growth', GROWTH_VALUES, GROWTH_LABELS, 2, (value, index) => {
             this.achievementSystem.trackAction('growth_changes');
+            this.achievementSystem.trackAction('max_growth_tested', value);
             this.analytics.trackInteraction('growth_change', value);
             this.updateCalculation();
         });
