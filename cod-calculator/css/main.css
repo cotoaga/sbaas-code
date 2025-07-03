@@ -1,0 +1,427 @@
+/* Cotoaga.Net Cost of Delay Calculator - Main Styles */
+
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+/* CSS Custom Properties */
+:root {
+  /* Cotoaga.Net Brand Colors */
+  --blue-primary: #2F6EBA;
+  --blue-light: #6EC1E4;
+  --blue-dark: #0F3A73;
+  --green-primary: #5E813F;
+  
+  /* Neutral Palette */
+  --black: #000000;
+  --grey-dark: #333333;
+  --grey-medium: #666666;
+  --grey-light: #AAAAAA;
+  --white: #FFFFFF;
+  
+  /* Anxiety Colors (Strategic) */
+  --red-loss: #dc2626;
+  --red-light: #fef2f2;
+  --red-border: #fca5a5;
+  --orange-warning: #f59e0b;
+  
+  /* Typography */
+  --font-family: 'Montserrat', sans-serif;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-bold: 700;
+  
+  /* Spacing Scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  
+  /* Shadows */
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.16);
+  
+  /* Animation */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  color: var(--grey-dark);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* SBaaS™ Branding */
+.sbaas-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+  background: linear-gradient(135deg, var(--blue-primary), var(--blue-light));
+  color: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-medium);
+}
+
+.sbaas-tagline {
+  font-size: 1.1rem;
+  font-weight: var(--font-bold);
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.sbaas-footer {
+  margin-top: var(--space-2xl);
+  padding: var(--space-xl);
+  background: linear-gradient(135deg, var(--grey-dark), var(--blue-dark));
+  color: var(--white);
+  border-radius: var(--radius-md);
+  text-align: center;
+  box-shadow: var(--shadow-medium);
+}
+
+.sbaas-closing p {
+  margin-bottom: var(--space-md);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.sbaas-footer .sbaas-tagline {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+/* Container & Layout */
+.calculator-container {
+  max-width: 800px;
+  margin: var(--space-lg) auto;
+  padding: var(--space-xl);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+  font-family: var(--font-family);
+}
+
+.calculator-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.calculator-header h1 {
+  color: var(--blue-primary);
+  font-weight: var(--font-bold);
+  font-size: 2.5rem;
+  margin-bottom: var(--space-md);
+  text-shadow: 0 2px 4px rgba(47, 110, 186, 0.1);
+}
+
+.calculator-header p {
+  color: var(--grey-medium);
+  font-weight: var(--font-regular);
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Form Styling */
+.calculator-form {
+  margin-bottom: var(--space-2xl);
+}
+
+.slider-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+/* Results Panel */
+.results-panel {
+  background: linear-gradient(135deg, var(--blue-primary), var(--blue-light));
+  color: var(--white);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-strong);
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.results-header h2 {
+  font-size: 2rem;
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-sm);
+}
+
+.results-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-weight: var(--font-light);
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: center;
+  transition: all var(--transition-medium);
+}
+
+.result-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.result-card.primary {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.result-label {
+  font-size: 0.9rem;
+  font-weight: var(--font-regular);
+  opacity: 0.8;
+  margin-bottom: var(--space-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.result-value {
+  font-size: 2.5rem;
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-xs);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-card.primary .result-value {
+  font-size: 3rem;
+}
+
+.result-description {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  font-weight: var(--font-light);
+}
+
+/* Achievement Panel */
+.achievement-panel {
+  background: var(--white);
+  border: 2px solid var(--blue-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.achievement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+}
+
+.achievement-header h3 {
+  color: var(--blue-primary);
+  font-weight: var(--font-bold);
+  font-size: 1.5rem;
+}
+
+.achievement-progress {
+  background: var(--blue-light);
+  color: var(--white);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: var(--font-bold);
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.achievement-item {
+  background: var(--white);
+  border: 2px solid var(--grey-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: center;
+  transition: all var(--transition-medium);
+  opacity: 0.5;
+}
+
+.achievement-item.unlocked {
+  opacity: 1;
+  border-color: var(--green-primary);
+  background: linear-gradient(135deg, var(--white), #f0f9ff);
+}
+
+.achievement-item.unlocked:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.achievement-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.achievement-title {
+  font-weight: var(--font-bold);
+  color: var(--blue-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.achievement-description {
+  font-size: 0.9rem;
+  color: var(--grey-medium);
+  font-weight: var(--font-light);
+}
+
+/* Educational Panel */
+.educational-panel {
+  background: linear-gradient(135deg, var(--white), #f8fafc);
+  border: 1px solid var(--grey-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.educational-content h3 {
+  color: var(--blue-primary);
+  font-weight: var(--font-bold);
+  font-size: 1.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.educational-content p {
+  color: var(--grey-dark);
+  margin-bottom: var(--space-lg);
+  line-height: 1.7;
+}
+
+.formula-explanation h4 {
+  color: var(--blue-dark);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-md);
+}
+
+.formula-explanation ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.formula-explanation li {
+  padding: var(--space-sm) 0;
+  border-left: 4px solid var(--blue-light);
+  padding-left: var(--space-md);
+  margin-bottom: var(--space-sm);
+  background: rgba(47, 110, 186, 0.05);
+}
+
+.formula-explanation strong {
+  color: var(--blue-primary);
+}
+
+/* Achievement Notification */
+.achievement-notification {
+  position: fixed;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  background: var(--white);
+  border: 2px solid var(--green-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-strong);
+  z-index: 1000;
+  max-width: 300px;
+  transform: translateX(100%);
+  transition: transform var(--transition-medium);
+}
+
+.achievement-notification.show {
+  transform: translateX(0);
+}
+
+.achievement-notification.hidden {
+  display: none;
+}
+
+.achievement-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.achievement-notification .achievement-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+.achievement-notification .achievement-title {
+  font-size: 1.1rem;
+  font-weight: var(--font-bold);
+  color: var(--green-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.achievement-notification .achievement-description {
+  font-size: 0.9rem;
+  color: var(--grey-medium);
+  margin-bottom: 0;
+}
+
+/* Utility Classes */
+.hidden {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--blue-primary);
+}
+
+.text-success {
+  color: var(--green-primary);
+}
+
+.text-warning {
+  color: var(--orange-warning);
+}
+
+.text-danger {
+  color: var(--red-loss);
+}

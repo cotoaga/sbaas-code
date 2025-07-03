@@ -1,2 +1,2 @@
-# sbaas-cod-calculator
-SBaaS-CoD-Calculator
+# SBaaS-CoDE
+SBaaS CoD Estimator
