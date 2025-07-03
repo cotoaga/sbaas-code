@@ -72,6 +72,18 @@ body {
   line-height: 1.6;
 }
 
+/* Remove any pseudo-elements that might create lines */
+.calculator-container::before,
+.calculator-container::after,
+body::before,
+body::after,
+*::before,
+*::after {
+  border: none !important;
+  border-left: none !important;
+  border-top: none !important;
+}
+
 /* Container & Layout */
 .calculator-container {
   max-width: 800px;

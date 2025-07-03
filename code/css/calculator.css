@@ -1,8 +1,8 @@
 /* Calculator-specific styles */
 
-/* Slider Container */
+/* Slider Container - Force white background */
 .slider-container {
-  background: #FFFFFF;
+  background: #FFFFFF !important;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 20px;
