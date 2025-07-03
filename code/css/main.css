@@ -99,6 +99,115 @@ body::after,
   display: none !important;
 }
 
+/* SURGICAL CSS FIXES - Apply immediately */
+
+/* 1. FIX WHITE TEXT IN RESULTS PANEL - Force dark text color */
+.results-header h2,
+.results-subtitle,
+.result-label,
+.result-description,
+.results-panel h2,
+.results-panel .result-label,
+.results-panel .result-description {
+  color: var(--grey-dark) !important; /* #333333 */
+}
+
+/* Specific targeting for all text in results panel */
+.results-panel * {
+  color: var(--grey-dark) !important;
+}
+
+/* Keep result values white for contrast on blue background */
+.result-value {
+  color: var(--white) !important;
+}
+
+/* 2. FIX EDUCATIONAL PANEL GREY BACKGROUND */
+.educational-panel {
+  background: #FFFFFF !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.educational-content {
+  background: #FFFFFF !important;
+}
+
+/* 3. ELIMINATE MYSTERIOUS BLUE LINE - Nuclear approach */
+* {
+  border-left: none !important;
+  border-top: none !important;
+}
+
+*::before,
+*::after {
+  border: none !important;
+  border-left: none !important;
+  border-top: none !important;
+  content: none !important;
+  display: none !important;
+}
+
+/* Restore only essential borders */
+.calculator-container {
+  border: 1px solid #e2e8f0 !important;
+  border-left: 1px solid #e2e8f0 !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+.slider-container {
+  border: 1px solid #e2e8f0 !important;
+}
+
+.results-panel {
+  border: 2px solid var(--red-loss) !important;
+}
+
+.achievement-panel {
+  border: 2px solid var(--blue-light) !important;
+}
+
+.educational-panel {
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* 4. FORCE WHITE BACKGROUNDS EVERYWHERE */
+.slider-container,
+.achievement-panel,
+.educational-panel,
+.input-group,
+.input-card,
+.form-section {
+  background: #FFFFFF !important;
+}
+
+/* 5. SPECIFIC FIXES FOR VISIBLE ELEMENTS */
+.calculator-subtitle {
+  color: var(--grey-dark) !important;
+}
+
+.achievement-header h3 {
+  color: var(--blue-primary) !important;
+}
+
+.educational-content h3,
+.educational-content h4 {
+  color: var(--blue-primary) !important;
+}
+
+.educational-content p {
+  color: var(--grey-dark) !important;
+}
+
+/* 6. OVERRIDE ANY GRADIENT BACKGROUNDS */
+.educational-panel {
+  background: #FFFFFF !important;
+  background-image: none !important;
+  background-gradient: none !important;
+}
+
 /* Container & Layout */
 .calculator-container,
 .main-container,
@@ -332,10 +441,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: var(--font-light);
 }
 
-/* Educational Panel */
+/* Educational Panel - Override with surgical fixes */
 .educational-panel {
-  background: linear-gradient(135deg, var(--white), #f8fafc);
-  border: 1px solid var(--grey-light);
+  background: #FFFFFF !important;
+  background-image: none !important;
+  background-gradient: none !important;
+  border: 1px solid #e2e8f0 !important;
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   margin-bottom: var(--space-xl);
